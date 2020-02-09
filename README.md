@@ -6,9 +6,9 @@ Essai max: 6h30 -> 35Mo
 
 # ToDo
 
-* Tester sur un production build
 * Tester mpegts: comme c'est du stream: peut être pas obligatoire 
-* Timestamp en metadata c'est possible? (pour faciliter recherches sur une longue durée)
+
+* Tests real life pour voir ce qui est bloquant
  
  
 
