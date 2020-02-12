@@ -17,11 +17,11 @@
  * pm grant com.example.android.audiovvnx android.permission.RECORD_AUDIO
  * 
  * 
- * am start-service com.example.android.audiovvnx/.AudioVvnx  
+ * am start-service com.example.android.audiovvnx/.MonService  
  * 
  * il FAUT arrêter le MediaRecorder sinon le fichier est illisible
  * 
- * am stop-service com.example.android.audiovvnx/.AudioVvnx (OK car fait passer par onDestroy())
+ * am stop-service com.example.android.audiovvnx/.MonService (OK car fait passer par onDestroy())
  * 
  * am force-stop com.example.android.audiovvnx (Pas OK car ne passe pas par onDestroy()) 
  * 
@@ -46,7 +46,7 @@ import java.io.IOException;
 
 
 
-public class AudioVvnx extends Service {
+public class MonService extends Service {
 	
 	private static final String TAG = "AudioVvnx";
 	
