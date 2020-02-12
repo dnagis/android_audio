@@ -6,12 +6,11 @@ Essai max: 6h30 -> 35Mo
 
 # ToDo
 
-* Il me faut une interface graphique: comme dans loctrack: pour lancer/arreter le service, et voir si il tourne
+* UI first shot done: tests real life
 
 * Chaque nouveau fichier doit avoir timestamp dans son nom pour pas overwriter
 
-
-* Tester mpegts: comme c'est du stream: peut être pas obligatoire 
+* Tester mpegts: comme c'est du stream: peut être pas obligatoire de passer par recorder.release();
 
 
  
