@@ -14,11 +14,25 @@
      limitations under the License.
 -->
 
-<EditText xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/text"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="18sp"
-    android:autoText="true"
-    android:capitalize="sentences"
-    android:text="@string/mon_label_vvnx" />
+    android:layout_height="match_parent">
+    
+     <Button
+     android:id="@+id/btn_start"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:text="@string/btn_start"
+     android:onClick="ActionPressBouton_start" />
+     
+     
+     <Button
+     android:id="@+id/btn_stop"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:layout_alignParentRight="true"
+     android:text="@string/btn_stop"
+     android:onClick="ActionPressBouton_stop" />
+
+</RelativeLayout> 
 

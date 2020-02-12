@@ -17,4 +17,6 @@
 <resources>
 	<string name="app_name">AudioVvnx</string>
     <string name="mon_label_vvnx">Il veulent un label je leur mets un laybeuul...</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
 </resources>

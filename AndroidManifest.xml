@@ -36,6 +36,12 @@
     android:label="AudioVvnx"
     android:directBootAware="true"
     android:debuggable="true">
+        <activity android:name="AudioRec_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <service
             android:name=".MonService"
             android:label="@string/mon_label_vvnx"
