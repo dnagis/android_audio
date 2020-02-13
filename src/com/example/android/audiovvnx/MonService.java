@@ -16,6 +16,10 @@
  * 
  * pm grant com.example.android.audiovvnx android.permission.RECORD_AUDIO
  * 
+ * celle là hélas faut la faire à la mano... pas suffisant pm grant hélas
+ * 
+ * android.permission.WRITE_EXTERNAL_STORAGE
+ * 
  * 
  * am start-service com.example.android.audiovvnx/.MonService  
  * 
@@ -48,6 +52,11 @@ import android.media.MediaRecorder;
 
 import java.io.IOException;
 
+import java.io.File;
+import android.os.Environment;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 
 public class MonService extends Service {
@@ -70,12 +79,13 @@ public class MonService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG, "OnStartCommand");
-		//stopSelf(); //j'avais mis ça juste parce que le dev guide disait qu'il fallait faire le ménage soi-même
 		
-		
+		//Il **FAUT** aller mettre la permission à la mano, pas le choix... mkdir /storage/emulated/0/AudioRec/	
 
-        fileName = getExternalCacheDir().getAbsolutePath();
-        fileName += "/audiorecordtest.mp4";
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyy_HHmmss");
+        fileName = "/storage/emulated/0/AudioRec/";
+        fileName += sdf.format(new Date());
+        fileName += ".mp4";
 		
 		recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -87,7 +97,7 @@ public class MonService extends Service {
         try {
             recorder.prepare();
         } catch (IOException e) {
-            Log.e(TAG, "prepare() failed");
+            Log.e(TAG, "prepare() failed: exception: " + e);
         }
 
         recorder.start();
