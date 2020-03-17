@@ -80,7 +80,9 @@ public class MonService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG, "OnStartCommand");
 		
-		//Il **FAUT** aller mettre la permission à la mano, pas le choix... mkdir /storage/emulated/0/AudioRec/	
+		//Il **FAUT** aller créer le dir de destination (et permission? bof...) à la mano, pas le choix... :
+		//	mkdir /storage/emulated/0/AudioRec/	
+		//pour y accéder il faut parfois dans l'explorateur de fichiers UI d'Android cocher dans le menu "Afficher Mem stock Int."
 
         SimpleDateFormat sdf = new SimpleDateFormat("ddMMyy_HHmmss");
         fileName = "/storage/emulated/0/AudioRec/";
@@ -108,6 +110,7 @@ public class MonService extends Service {
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
         String CHANNEL_ID = "LA_CHAN_ID";
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "ma_channel", importance);
+        channel.setSound(null, null);
         channel.setDescription("android_fait_chier_avec_sa_channel");
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
